@@ -1,5 +1,7 @@
 
 import type { Expense } from "../model/Expense";
+import CurrencyUtils from "../utils/CurrencyUTils";
+import FormatDateUtil from "../utils/FromatDateUtil";
 
 
 interface Props {
@@ -47,12 +49,12 @@ const ExpenseList = ({expenses}:Props) => {
                         {expenses.name}
                         </h5>
                         <span className="fst-italic">
-                        {expenses.date}
+                        {FormatDateUtil.formatDateInput(expenses.date)}
                         </span>
                         </div>
                         <div className="card-subtitle">
                         <h5 className=" app-primary-bg-color">
-                            {expenses.amount}
+                            {CurrencyUtils.formatAmount(expenses.amount)}
                         </h5>
                     </div>
                 </div>
